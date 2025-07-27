@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+/*venv/
+**/*.env
+**/docs
+**/*pycache*
+**/*model/*keras
+/*.mypy_cache/
+/*.ropeproject/

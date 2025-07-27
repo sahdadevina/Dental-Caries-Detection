@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-3">My Dental Care</h3>
             <p className="text-gray-400 max-w-md">
-              Advanced dental caries detection using AI technology to assist dental professionals
+              Advanced dental caries classification using AI technology to assist dental professionals
               in providing better patient care.
             </p>
           </div>
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/detection"
+                    to="/classification"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Detection
+                    Classification
                   </NavLink>
                 </li>
                 <li>

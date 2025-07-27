@@ -1,1 +1,1 @@
-# Dental-Caries-Detection
+# Dental-Caries-Classification

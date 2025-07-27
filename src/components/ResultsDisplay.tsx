@@ -1,9 +1,9 @@
 import React from 'react';
 import { CheckCircle, AlertTriangle, HelpCircle } from 'lucide-react';
-import { DetectionResult } from '../types/detection';
+import { ClassificationResult } from '../types/classification';
 
 interface ResultsDisplayProps {
-  result: DetectionResult | null;
+  result: ClassificationResult | null;
   isLoading: boolean;
 }
 
@@ -32,7 +32,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result, isLoading }) =>
           <HelpCircle size={48} className="text-gray-400 mb-4" />
           <h3 className="text-lg font-medium text-gray-700 mb-2">No Results Yet</h3>
           <p className="text-gray-500 max-w-md">
-            Upload a dental X-ray image and crop to a specific tooth area to see detection results
+            Upload a dental X-ray image and crop to a specific tooth area to see classification results
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result, isLoading }) =>
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 border ${severityInfo.border}`}>
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold text-gray-800">Detection Results</h3>
+        <h3 className="text-xl font-semibold text-gray-800">Classification Results</h3>
         <span className={`px-3 py-1 rounded-full text-sm font-medium flex items-center ${severityInfo.color}`}>
           {severityInfo.icon}
           <span className="ml-1">{result.class}</span>
@@ -80,11 +80,11 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result, isLoading }) =>
           <div className="w-full bg-gray-200 rounded-full h-2.5">
             <div 
               className="bg-blue-600 h-2.5 rounded-full" 
-              style={{ width: `${Math.round(result.confidence * 100)}%` }}
+              style={{ width: `${Math.round(Math.min(result.confidence, 0.99) * 100)}%` }}
             ></div>
           </div>
           <p className="text-right text-sm text-gray-600 mt-1">
-            {Math.round(result.confidence * 100)}%
+            {Math.round(Math.min(result.confidence, 0.99) * 100)}%
           </p>
         </div>
 

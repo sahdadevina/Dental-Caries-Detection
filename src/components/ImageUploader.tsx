@@ -3,9 +3,11 @@ import { Upload, X } from 'lucide-react';
 
 interface ImageUploaderProps {
   onImageSelected: (imageFile: File) => void;
+  onResult: (result: any) => void;  // result dari backend
+  setIsLoading: (loading: boolean) => void;
 }
 
-const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
+const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected, onResult, setIsLoading }) => {
   const [dragActive, setDragActive] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -13,7 +15,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
   const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    
     if (e.type === 'dragenter' || e.type === 'dragover') {
       setDragActive(true);
     } else if (e.type === 'dragleave') {
@@ -25,7 +26,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       handleFile(e.dataTransfer.files[0]);
     }
@@ -33,28 +33,24 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    
     if (e.target.files && e.target.files[0]) {
       handleFile(e.target.files[0]);
     }
   };
 
   const handleFile = (file: File) => {
-    // Check if file is an image
     if (!file.type.match('image.*')) {
       alert('Please upload an image file');
       return;
     }
 
-    // Create preview
     const reader = new FileReader();
     reader.onload = () => {
       setPreviewImage(reader.result as string);
     };
     reader.readAsDataURL(file);
-    
-    // Pass file to parent component
     onImageSelected(file);
+    uploadToBackend(file);
   };
 
   const triggerFileInput = () => {
@@ -78,7 +74,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
         onChange={handleChange}
         className="hidden"
       />
-      
       <div
         className={`relative flex flex-col items-center justify-center border-2 border-dashed rounded-lg p-6 transition-colors ${
           dragActive 

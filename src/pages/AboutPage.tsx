@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
           <p className="text-gray-700 mb-6">
             Our advanced deep learning model has been trained on thousands of dental X-ray images 
-            to detect seven different classes of dental conditions based on G.V. Black's classification system:
+            to classify seven different classes of dental conditions based on G.V. Black's classification system:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -29,7 +29,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class I Caries</h3>
-                <p className="text-gray-600 text-sm">Caries in pits and fissures on occlusal surfaces</p>
+                <p className="text-gray-600 text-sm">Caries located in pits and fissures on the occlusal surfaces of molars and premolars, or in the lingual pits of maxillary incisors</p>
               </div>
             </div>
 
@@ -39,7 +39,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class II Caries</h3>
-                <p className="text-gray-600 text-sm">Caries on proximal surfaces of posterior teeth</p>
+                <p className="text-gray-600 text-sm">Caries found on the proximal (mesial or distal) surfaces of posterior teeth, including molars and premolars</p>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class III Caries</h3>
-                <p className="text-gray-600 text-sm">Proximal caries on anterior teeth without incisal involvement</p>
+                <p className="text-gray-600 text-sm">Caries on the proximal surfaces of anterior teeth without involvement of the incisal angle</p>
               </div>
             </div>
 
@@ -59,7 +59,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class IV Caries</h3>
-                <p className="text-gray-600 text-sm">Proximal caries on anterior teeth with incisal involvement</p>
+                <p className="text-gray-600 text-sm">Caries on the proximal surfaces of anterior teeth involving the incisal angle</p>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class V Caries</h3>
-                <p className="text-gray-600 text-sm">Caries in cervical areas of teeth</p>
+                <p className="text-gray-600 text-sm">Caries located in the cervical third of the facial or lingual surfaces of both anterior and posterior teeth</p>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Class VI Caries</h3>
-                <p className="text-gray-600 text-sm">Caries on incisal edges or cusp tips</p>
+                <p className="text-gray-600 text-sm">Caries involving the incisal edges of anterior teeth or the cusp tips of posterior teeth</p>
               </div>
             </div>
 
@@ -89,13 +89,13 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800">Non-Caries</h3>
-                <p className="text-gray-600 text-sm">Healthy teeth or non-caries conditions</p>
+                <p className="text-gray-600 text-sm">No visible carious lesion detected. This category may include healthy teeth or non-carious conditions such as developmental anomalies, fluorosis, or minor enamel defects</p>
               </div>
             </div>
           </div>
 
           <p className="text-gray-700">
-            Our model achieves over 92% accuracy in clinical validation studies, providing 
+            Our model achieves over 91% accuracy in clinical validation studies, providing 
             dental professionals with a reliable second opinion to complement their expertise.
           </p>
         </div>
@@ -108,7 +108,7 @@ const AboutPage: React.FC = () => {
           </div>
           <h3 className="text-lg font-semibold text-gray-800 mb-2">Accuracy</h3>
           <p className="text-gray-600">
-            Our detection system has been validated in clinical settings with a 92% accuracy rate when 
+            Our classification system has been validated in clinical settings with a 91% accuracy rate when 
             compared to expert diagnoses.
           </p>
         </div>
@@ -141,11 +141,11 @@ const AboutPage: React.FC = () => {
           <div>
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Ready to enhance your diagnostic accuracy?</h2>
             <p className="text-gray-700 max-w-2xl mb-6 md:mb-0">
-              Start using our AI-powered dental caries detection system today to improve patient outcomes.
+              Start using our AI-powered dental caries classification system today to improve patient outcomes.
             </p>
           </div>
           <NavLink
-            to="/detection"
+            to="/classification"
             className="inline-flex items-center bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-300 focus:outline-none"
           >
             Try It Now

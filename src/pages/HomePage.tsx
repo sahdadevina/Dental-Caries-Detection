@@ -10,17 +10,17 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:16px_16px]"></div>
         <div className="relative p-8 md:p-12 text-white">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Advanced Dental Caries Detection<br />Powered by AI
+            Advanced Dental Caries Classification<br />Powered by AI
           </h1>
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mb-8">
             Upload dental X-rays and get instant AI-powered analysis to 
             identify and classify dental caries with clinical precision.
           </p>
           <NavLink
-            to="/detection"
+            to="/classification"
             className="inline-flex items-center bg-white text-blue-700 py-3 px-6 rounded-lg font-medium hover:bg-blue-50 transition-colors focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 focus:outline-none"
           >
-            Start Detection
+            Start Classifying
             <ArrowRight size={20} className="ml-2" />
           </NavLink>
         </div>
@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Get Results</h3>
             <p className="text-gray-600">
-              View detailed detection results showing caries classification across 6 different categories with confidence scores and recommendations.
+              View detailed classification results showing caries classification across 6 different categories with confidence scores and recommendations.
             </p>
           </div>
         </div>
@@ -66,10 +66,10 @@ const HomePage: React.FC = () => {
       <section className="bg-gray-50 rounded-xl p-8 text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Ready to improve your diagnostic accuracy?</h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-          Start using our AI-powered dental caries detection system today to enhance your diagnostic capabilities and provide better patient care.
+          Start using our AI-powered dental caries classification system today to enhance your diagnostic capabilities and provide better patient care.
         </p>
         <NavLink
-          to="/detection"
+          to="/classification"
           className="inline-flex items-center bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-300 focus:outline-none"
         >
           Try It Now

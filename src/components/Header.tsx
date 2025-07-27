@@ -38,7 +38,7 @@ const Header: React.FC = () => {
               Home
             </NavLink>
             <NavLink
-              to="/detection"
+              to="/classification"
               className={({ isActive }) =>
                 `text-base font-medium transition-colors ${
                   isActive
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
                 }`
               }
             >
-              Detection
+              Classification
             </NavLink>
             <NavLink
               to="/about"
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
               Home
             </NavLink>
             <NavLink
-              to="/detection"
+              to="/classification"
               className={({ isActive }) =>
                 `block py-2 px-3 rounded-md ${
                   isActive
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Detection
+              Classification
             </NavLink>
             <NavLink
               to="/about"
